@@ -19,7 +19,35 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@vite-pwa/nuxt',
     '@vueuse/nuxt',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots',
+    'nuxt-og-image',
+    'nuxt-security',
   ],
+  security: {
+    headers: {
+      contentSecurityPolicy: {
+        'img-src': ['\'self\'', 'data:', 'https:'],
+        // allow inline scripts for development
+        'script-src': ['\'self\'', '\'unsafe-inline\'', 'https:'],
+      },
+      crossOriginEmbedderPolicy: process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'require-corp',
+    },
+  },
+  site: {
+    url: 'https://example.com',
+    name: 'Nuxt Template',
+    description: 'A Nuxt 4 Template',
+    defaultLocale: 'en',
+  },
+  sitemap: {
+    sources: [
+      '/api/__sitemap__/urls', // Optional: dynamic URLs from API
+    ],
+  },
+  robots: {
+    // any custom robots.txt rules
+  },
   colorMode: {
     classSuffix: '',
   },

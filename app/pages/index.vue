@@ -160,4 +160,12 @@ async function fetchApi() {
     loading.value = false
   }
 }
+
+// OG Image Configuration
+defineOgImageComponent('NuxtSeo', {
+  title: 'Nuxt 4 Template',
+  description: 'A starter template for Nuxt 4 with Tailwind, Pinia, and i18n.',
+  theme: '#00dc82',
+  colorMode: 'dark',
+})
 </script>
