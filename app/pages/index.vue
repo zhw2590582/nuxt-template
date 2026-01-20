@@ -150,8 +150,12 @@ const loading = ref(false)
 async function fetchApi() {
   loading.value = true
   try {
-    const data: any = await $fetch('/api/hello')
-    apiResponse.value = data.message
+    // Demo: 使用封装后的 useApi
+    const { data, error } = await useApi<any>('/hello') // 这里不仅演示封装，还演示了 baseURL '/api' 生效
+    if (error.value) {
+      throw createError(error.value)
+    }
+    apiResponse.value = data.value?.message
   }
   catch {
     apiResponse.value = 'Error fetching API'
