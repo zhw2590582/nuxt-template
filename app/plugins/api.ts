@@ -1,8 +1,9 @@
 // app/plugins/api.ts
 export default defineNuxtPlugin({
   setup() {
+    const config = useRuntimeConfig()
     const api = $fetch.create({
-      baseURL: '/api', // 这里可以换成 runtimeConfig.public.apiBase
+      baseURL: config.public.apiBase,
       onRequest({ options }) {
         // 在这里处理请求头，例如添加 token
         const token = useCookie('token')
