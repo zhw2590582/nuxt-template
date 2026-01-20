@@ -1,3 +1,15 @@
 {
-  "welcome": "欢迎"
+  "welcome": "欢迎使用 Nuxt 模板",
+  "theme": "主题",
+  "system": "跟随系统",
+  "light": "亮色",
+  "dark": "暗色",
+  "language": "语言",
+  "device_info": "设备信息",
+  "mobile": "移动端",
+  "desktop": "桌面端",
+  "mouse_position": "鼠标位置",
+  "api_response": "API 响应",
+  "loading": "加载中...",
+  "fetch_api": "请求 API"
 }

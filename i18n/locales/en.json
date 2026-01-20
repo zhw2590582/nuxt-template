@@ -1,3 +1,15 @@
 {
-  "welcome": "Welcome"
+  "welcome": "Welcome to Nuxt Template",
+  "theme": "Theme",
+  "system": "System",
+  "light": "Light",
+  "dark": "Dark",
+  "language": "Language",
+  "device_info": "Device Info",
+  "mobile": "Mobile",
+  "desktop": "Desktop",
+  "mouse_position": "Mouse Position",
+  "api_response": "API Response",
+  "loading": "Loading...",
+  "fetch_api": "Fetch API"
 }
