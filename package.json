@@ -7,7 +7,7 @@
     "dev": "nuxt dev --dotenv .env.development",
     "generate": "nuxt generate --dotenv .env.production",
     "preview": "nuxt preview --dotenv .env.production",
-    "test": "vitest",
+    "test": "vitest --dotenv .env.development",
     "typecheck": "vue-tsc --noEmit",
     "lint": "npx eslint . --fix",
     "postinstall": "nuxt prepare",
