@@ -12090,6 +12090,14 @@ vue-router@^4.6.3, vue-router@^4.6.4:
   dependencies:
     "@vue/devtools-api" "^6.6.4"
 
+vue-tsc@^3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/vue-tsc/-/vue-tsc-3.2.2.tgz#ccee54f2c2490713de75a66d9965bd9e33fe7066"
+  integrity sha512-r9YSia/VgGwmbbfC06hDdAatH634XJ9nVl6Zrnz1iK4ucp8Wu78kawplXnIDa3MSu1XdQQePTHLXYwPDWn+nyQ==
+  dependencies:
+    "@volar/typescript" "2.4.27"
+    "@vue/language-core" "3.2.2"
+
 vue@^3.5.21, vue@^3.5.25, vue@^3.5.26, vue@^3.5.27:
   version "3.5.27"
   resolved "https://registry.yarnpkg.com/vue/-/vue-3.5.27.tgz#e55fd941b614459ab2228489bc19d1692e05876c"
