@@ -24,13 +24,16 @@ export default defineNuxtConfig({
     classSuffix: '',
   },
   i18n: {
-    vueI18n: './i18n.config.ts',
-    locales: [
-      { code: 'en', file: 'en.json' },
-      { code: 'zh', file: 'zh.json' },
-    ],
+    strategy: 'no_prefix',
     defaultLocale: 'en',
-    langDir: 'locales',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'aimu-locale',
+    },
+    locales: [
+      { code: 'en', name: 'English', file: 'en.json' },
+      { code: 'zh-CN', name: '中文简体', file: 'zh-CN.json' },
+    ],
   },
   pwa: {
     registerType: 'autoUpdate',

@@ -46,8 +46,8 @@
           </button>
           <button
             class="rounded px-3 py-1 text-sm font-medium"
-            :class="locale === 'zh' ? 'bg-green-500 text-white' : 'bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300'"
-            @click="setLocale('zh')"
+            :class="locale === 'zh-CN' ? 'bg-green-500 text-white' : 'bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300'"
+            @click="setLocale('zh-CN')"
           >
             中文
           </button>
