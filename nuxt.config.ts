@@ -52,6 +52,8 @@ export default defineNuxtConfig({
   },
   colorMode: {
     classSuffix: '',
+    storage: 'cookie', // 告诉 color-mode 模块使用 cookie
+    storageKey: 'color-mode', // 与 app/stores/app.ts 中的 key 保持一致
   },
   i18n: {
     strategy: 'no_prefix',
