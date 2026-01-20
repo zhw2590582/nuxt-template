@@ -10,7 +10,61 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
-  modules: ['@nuxt/eslint', '@nuxtjs/tailwindcss', '@pinia/nuxt'],
+  modules: [
+    '@nuxt/eslint',
+    '@nuxtjs/tailwindcss',
+    '@pinia/nuxt',
+    '@nuxtjs/color-mode',
+    '@nuxtjs/device',
+    '@nuxtjs/i18n',
+    '@vite-pwa/nuxt',
+    '@vueuse/nuxt',
+  ],
+  colorMode: {
+    classSuffix: '',
+  },
+  i18n: {
+    vueI18n: './i18n.config.ts',
+    locales: [
+      { code: 'en', file: 'en.json' },
+      { code: 'zh', file: 'zh.json' },
+    ],
+    defaultLocale: 'en',
+    langDir: 'locales',
+  },
+  pwa: {
+    registerType: 'autoUpdate',
+    manifest: {
+      name: 'Nuxt Template',
+      short_name: 'NuxtTemplate',
+      theme_color: '#ffffff',
+      icons: [
+        {
+          src: 'pwa-192x192.png',
+          sizes: '192x192',
+          type: 'image/png',
+        },
+        {
+          src: 'pwa-512x512.png',
+          sizes: '512x512',
+          type: 'image/png',
+        },
+      ],
+    },
+    workbox: {
+      navigateFallback: '/',
+      globPatterns: ['**/*.{js,css,html,png,svg,ico}'],
+    },
+    client: {
+      installPrompt: true,
+    },
+    devOptions: {
+      enabled: false,
+      suppressWarnings: true,
+      navigateFallbackAllowlist: [/^\/$/],
+      type: 'module',
+    },
+  },
   eslint: {
     config: {
       standalone: false,
