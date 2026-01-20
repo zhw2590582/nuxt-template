@@ -20,14 +20,14 @@
             v-for="mode in ['system', 'light', 'dark']"
             :key="mode"
             class="rounded px-3 py-1 text-sm font-medium capitalize"
-            :class="colorMode.preference === mode ? 'bg-green-500 text-white' : 'bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300'"
-            @click="colorMode.preference = mode"
+            :class="appStore.colorMode === mode ? 'bg-green-500 text-white' : 'bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300'"
+            @click="appStore.setColorMode(mode as 'light' | 'dark')"
           >
             {{ $t(mode) }}
           </button>
         </div>
         <p class="mt-4 text-sm text-gray-500">
-          Current: {{ colorMode.value }}
+          Current: {{ appStore.colorMode }}
         </p>
       </div>
 
@@ -137,8 +137,8 @@
 <script setup lang="ts">
 import { sharedUtility } from '#shared/utils'
 
+const appStore = useAppStore()
 const { locale, setLocale } = useI18n()
-const colorMode = useColorMode()
 const counter = useCounterStore()
 const { x, y } = useMouse()
 const { isMobile, userAgent } = useDevice()

@@ -6,3 +6,8 @@
     </main>
   </div>
 </template>
+
+<script setup lang="ts">
+const appStore = useAppStore()
+appStore.setColorMode(appStore.colorMode as 'light' | 'dark')
+</script>
