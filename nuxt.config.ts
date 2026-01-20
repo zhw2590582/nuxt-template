@@ -1,14 +1,20 @@
 import process from 'node:process'
 
+console.log('Current Environment Variables:', process.env.NUXT_PUBLIC_SITE_NAME)
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   runtimeConfig: {
     // The private keys which are only available server-side
-    apiSecret: '123',
+    apiSecret: process.env.NUXT_API_SECRET,
     // Keys within public are also exposed client-side
     public: {
-      apiBase: '/api',
+      apiBase: process.env.NUXT_PUBLIC_API_BASE,
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL,
+      siteName: process.env.NUXT_PUBLIC_SITE_NAME,
+      siteDescription: process.env.NUXT_PUBLIC_SITE_DESCRIPTION,
+      defaultLocale: process.env.NUXT_PUBLIC_DEFAULT_LOCALE,
     },
   },
   devtools: { enabled: true },
@@ -37,10 +43,10 @@ export default defineNuxtConfig({
     },
   },
   site: {
-    url: 'https://example.com',
-    name: 'Nuxt Template',
-    description: 'A Nuxt 4 Template',
-    defaultLocale: 'en',
+    url: process.env.NUXT_PUBLIC_SITE_URL,
+    name: process.env.NUXT_PUBLIC_SITE_NAME,
+    description: process.env.NUXT_PUBLIC_SITE_DESCRIPTION,
+    defaultLocale: process.env.NUXT_PUBLIC_DEFAULT_LOCALE,
   },
   sitemap: {
     sources: [

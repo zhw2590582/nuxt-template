@@ -8,7 +8,7 @@
         {{ $t('welcome') }}
       </p>
       <div class="mt-2 text-sm text-gray-500">
-        Const: {{ APP_NAME }} ({{ APP_DESCRIPTION }})
+        Config: {{ siteName }} ({{ siteDescription }})
       </div>
     </div>
 
@@ -138,9 +138,9 @@
 </template>
 
 <script setup lang="ts">
-import { APP_DESCRIPTION, APP_NAME } from '#shared/constants'
 import { sharedUtility } from '#shared/utils'
 
+const { public: { siteName, siteDescription } } = useRuntimeConfig()
 const appStore = useAppStore()
 const { locale, setLocale } = useI18n()
 const counter = useCounterStore()
