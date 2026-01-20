@@ -7,9 +7,11 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "lint": "npx eslint . --fix",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@antfu/eslint-config": "^7.0.1",
     "@nuxt/content": "3.11.0",
     "@nuxt/eslint": "1.12.1",
     "better-sqlite3": "^12.6.2",
