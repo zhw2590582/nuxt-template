@@ -11,13 +11,13 @@ export default defineVitestConfig({
       nuxt: {
         overrides: {
           // 解决 [warn] [@nuxtjs/og-image] Nuxt OG Image is enabled but SSR is disabled.
-          ssr: true, 
+          ssr: true,
         },
         // 注册测试专用的插件
         plugins: [
-          './tests/plugins/color-mode.mock.ts' 
-        ]
-      }
-    }
+          './tests/plugins/color-mode.mock.ts',
+        ],
+      },
+    },
   },
 })
